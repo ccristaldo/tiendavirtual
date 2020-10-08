@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+from django.urls import reverse_lazy
 from pathlib import Path
 import os
 
@@ -27,6 +27,9 @@ SECRET_KEY = '&hfc^ts=s506$rdveka$qg$s&+b)i(+c1w+k3kl8&6&)#m-4ah'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'usuarios.Usuario'
+LOGIN_REDIRECT_URL = reverse_lazy('index')
+LOGOUT_REDIRECT_URL = reverse_lazy('index')
 
 
 # Application definition
